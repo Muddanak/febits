@@ -1,3 +1,8 @@
+//! # Febits
+//!
+//! A library containing tools to help with certain tasks to make things easier.
+//! Primarily the tools will consist of ways to manipulate primitives and other data types.
+
 pub mod vectors;
 pub mod prim_u32;
 pub mod prim_str;
@@ -7,7 +12,7 @@ pub mod string_fe;
 mod tests {
     use crate::prim_u32::u32_to_u16;
     use crate::string_fe::{bytes_to_hex_string, index_hex_string_in_hex_string};
-    use crate::vectors::sort_vector_floats;
+    use crate::vectors::sort_vec_floats_f32;
 
     // File:  prim_u32
     #[test]
@@ -43,11 +48,11 @@ mod tests {
 
     //File vectors.rs
     #[test]
-    fn test_sort_vector_floats() {
+    fn test_sort_vec_floats_f32() {
         let testvec: Vec<f32> = vec![1.2, 2.3, 1.1, 0.5];
-        let testvec2: Vec<f32> = vec![11.0, 12.1, 33.7, std::f32::consts::PI];
+        let _testvec2: Vec<f32> = vec![11.0, 12.1, 33.7, std::f32::consts::PI];
 
-        assert_eq!(sort_vector_floats(&testvec), vec![0.5, 1.1, 1.2, 2.3]);
+        assert_eq!(sort_vec_floats_f32(&testvec), vec![0.5, 1.1, 1.2, 2.3]);
     }
 
 
