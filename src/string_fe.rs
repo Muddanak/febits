@@ -1,7 +1,7 @@
 use std::process::exit;
 use std::fmt::Write;
 
-/// Returns a String of Hexadecimal-encoded bytes of &[u8] provided
+/// Returns a [String] of Hexadecimal-encoded bytes of &[u8] provided
 ///
 /// # Example
 ///
@@ -28,8 +28,8 @@ pub fn bytes_to_hex_string(source: &[u8]) -> String {
     buffer
 }
 
-/// Returns the index of one Hex-encoded String pattern located inside of
-/// another Hex-encoded string source
+/// Returns the index of one Hex-encoded [String] pattern located inside of
+/// another Hex-encoded [String] source
 ///
 /// # Example
 ///
@@ -56,7 +56,7 @@ pub fn index_hex_string_in_hex_string(source: &String, pattern: &String) -> usiz
     0
 }
 
-/// Find a given String pattern inside of a given source of &[u8]
+/// Find a given [String] pattern inside of a given source of &[u8]
 ///
 /// # Example
 ///

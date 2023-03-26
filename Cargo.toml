@@ -3,6 +3,8 @@ name = "febits"
 version = "0.1.0"
 edition = "2021"
 authors = ["Mudd"]
+description = "A library containing tools to help with certain tasks to make things easier. Primarily the tools will consist of ways to manipulate primitives and other data types."
+license = "MIT"
 
 [profile.release]
 opt-level = 3

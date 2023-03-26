@@ -2,60 +2,29 @@
 //!
 //! A library containing tools to help with certain tasks to make things easier.
 //! Primarily the tools will consist of ways to manipulate primitives and other data types.
+//!
+//! prim_u32<br>
+//!         \-> u32_to_u16: Split a [u32] into a tuple of ([u16], [u16])
+//!
+//! prim_str<br>
+//!         \-> find_str_exact:  Find an exact [&str] in another [&str] <br>
+//!         \-> find_str: Find any [&str] in another [&str]
+//!
+//! string_fe<br>
+//!         \-> bytes_to_hex_string:  Hex-encodes [u8] into a [String]<br>
+//!         \-> index_hex_string_in_hex_string:  Finds a Hex-encoded [String] inside of another Hex-encoded [String]<br>
+//!         \-> index_string_in_u8:  Finds a &[String] inside of a set of [u8]
+//!
+//! vectors<br>
+//!         \-> sort_vec_floats_f32: Sorts a [`Vec<f32>`] into smallest -> biggest order
+
+pub use self::vectors::*;
+pub use self::prim_u32::*;
+pub use self::prim_str::*;
+pub use self::string_fe::*;
+
 
 pub mod vectors;
 pub mod prim_u32;
 pub mod prim_str;
 pub mod string_fe;
-
-#[cfg(test)]
-mod tests {
-    use crate::prim_u32::u32_to_u16;
-    use crate::string_fe::{bytes_to_hex_string, index_hex_string_in_hex_string};
-    use crate::vectors::sort_vec_floats_f32;
-
-    // File:  prim_u32
-    #[test]
-    fn test_prim_u32_u32_to_u16() {
-        assert_eq!(u32_to_u16(0x10101010), (0x1010, 0x1010));
-        assert_eq!(u32_to_u16(0x11112222), (0x1111, 0x2222));
-        assert_eq!(u32_to_u16(0xDEADBEEF), (0xDEAD, 0xBEEF));
-    }
-
-
-    // File:  string_fe.rs
-    #[test]
-    fn test_bytes_to_hex_string() {
-
-        let data = b"This is test and Test data";
-
-        assert_eq!(bytes_to_hex_string(data), "54686973206973207465737420616e6420546573742064617461");
-        assert_eq!(bytes_to_hex_string(&data[3..8]), "7320697320");
-    }
-
-    #[test]
-    fn test_index_hex_string_in_hex_string() {
-        let data = b"This is test and Test data";
-        let data = bytes_to_hex_string(data);
-        let find = bytes_to_hex_string(b"test");
-        let find2 = bytes_to_hex_string(b"Test");
-        let find3 = bytes_to_hex_string(b"test and Test");
-
-        assert_eq!(index_hex_string_in_hex_string(&data, &find), 8);
-        assert_eq!(index_hex_string_in_hex_string(&data, &find2), 17);
-        assert_eq!(index_hex_string_in_hex_string(&data, &find3), 8);
-    }
-
-    //File vectors.rs
-    #[test]
-    fn test_sort_vec_floats_f32() {
-        let testvec: Vec<f32> = vec![1.2, 2.3, 1.1, 0.5];
-        let _testvec2: Vec<f32> = vec![11.0, 12.1, 33.7, std::f32::consts::PI];
-
-        assert_eq!(sort_vec_floats_f32(&testvec), vec![0.5, 1.1, 1.2, 2.3]);
-    }
-
-
-
-}
-

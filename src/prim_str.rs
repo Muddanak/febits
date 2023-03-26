@@ -1,7 +1,7 @@
 
 
-/// Finds an exact string match within a source and a provided pattern
-/// and returns the usize index pointing to where that pattern is first found
+/// Finds an exact [String] match within a source and a provided pattern
+/// and returns the [usize] index pointing to where that pattern is first found
 ///
 /// # Examples
 ///
@@ -33,8 +33,8 @@ pub fn find_str_exact(source: &str, pattern: &str) -> usize {
     0
 }
 
-/// Finds a string match within a source and a provided pattern
-/// and returns the usize index pointing to where that pattern is first found
+/// Finds a [String] match within a source and a provided pattern
+/// and returns the [usize] index pointing to where that pattern is first found
 ///
 /// # Examples
 ///

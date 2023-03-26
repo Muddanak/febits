@@ -1,6 +1,7 @@
 use std::ops::{BitAnd, Shr};
 
-/// Returns a tuple of (u16, u16) split from a u32 input
+
+/// Returns a tuple of ([u16], [u16]) split from a [u32] input
 ///
 /// # Example
 ///

@@ -1,5 +1,5 @@
 
-/// Returns a sorted Vec of f32 values from smallest -> largest
+/// Returns a sorted [Vec] of [f32] values from smallest -> largest
 ///
 /// # Example
 ///
