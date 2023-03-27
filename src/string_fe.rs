@@ -19,7 +19,7 @@ pub fn bytes_to_hex_string(source: &[u8]) -> String {
     let mut buffer = String::new();
 
     for &x in source {
-        if let Err(e) = write!(&mut buffer, "{:x?}", x) {
+        if let Err(e) = write!(&mut buffer, "{:02X?}", x) {
             println!("Failed to convert byte to hex! Got Error: {e}");
             exit(1)
         }
