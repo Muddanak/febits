@@ -11,7 +11,7 @@ use std::fmt::Write;
 /// let sample = b"This is rich";
 ///
 /// assert_eq!(bytes_to_hex_string(sample), "546869732069732072696368");
-/// assert_eq!(bytes_to_hex_string(b"Other data to hex String"), "4f74686572206461746120746f2068657820537472696e67");
+/// assert_eq!(bytes_to_hex_string(b"Other data to hex String"), "4F74686572206461746120746F2068657820537472696E67");
 /// ```
 ///
 pub fn bytes_to_hex_string(source: &[u8]) -> String {

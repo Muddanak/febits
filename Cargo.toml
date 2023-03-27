@@ -1,6 +1,6 @@
 [package]
 name = "febits"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["Mudd"]
 description = "A library containing small utilities to help with certain tasks to make things easier. Primarily the tools will consist of ways to manipulate primitives and other data types."
