@@ -1,6 +1,8 @@
 # febits
 A Rust library containing various features and tools to help make certain tasks easier
 
+These functions were pulled from other projects being worked on for use later in on future projects, consolidating code into one library.
+
 ---
 
 A library containing tools to help with certain tasks to make things easier.
