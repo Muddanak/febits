@@ -1,7 +1,15 @@
 
 
 /// Finds an exact [String] match within a source and a provided pattern
-/// and returns the [usize] index pointing to where that pattern is first found
+/// and returns the [usize] index pointing to where that pattern is first found.
+///
+/// Returns [None] if not found
+///
+/// Takes in:
+/// [&str], [&str]
+///
+/// Outputs:
+/// [usize]
 ///
 /// # Examples
 ///
@@ -11,12 +19,14 @@
 /// let input = "This is Test Data";
 /// let pattern = "Test";
 /// let index = find_str_exact(input, pattern);
-/// assert_eq!(index, 8);
+/// assert_eq!(index, Some(8));
 /// let index = find_str_exact("This is Test", "is Test");
-/// assert_eq!(index, 5);
+/// assert_eq!(index, Some(5));
+/// let index = find_str_exact("This is test", "Only a test");
+/// assert_eq!(index, None);
 /// ```
 ///
-pub fn find_str_exact(source: &str, pattern: &str) -> usize {
+pub fn find_str_exact(source: &str, pattern: &str) -> Option<usize> {
 
     let size = pattern.len();
     'upper: for index in 0..source.len() {
@@ -27,14 +37,22 @@ pub fn find_str_exact(source: &str, pattern: &str) -> usize {
                     continue 'upper
                 }
             }
-            return index
+            return Some(index)
         }
     }
-    0
+    None
 }
 
 /// Finds a [String] match within a source and a provided pattern
-/// and returns the [usize] index pointing to where that pattern is first found
+/// and returns the [usize] index pointing to where that pattern is first found.
+///
+/// Returns [None] if not found.
+///
+/// Takes in:
+/// [&str], [&str]
+///
+/// Outputs:
+/// [usize]
 ///
 /// # Examples
 ///
@@ -44,12 +62,14 @@ pub fn find_str_exact(source: &str, pattern: &str) -> usize {
 /// let input = "THiS Is TeSt Data";
 /// let pattern = "TeST";
 /// let index = find_str(input, pattern);
-/// assert_eq!(index, 8);
+/// assert_eq!(index, Some(8));
 /// let index = find_str("ThIS iS tESt", "Is tEST");
-/// assert_eq!(index, 5);
+/// assert_eq!(index, Some(5));
+/// let index = find_str("This IS A teST", "JuSt A TeST");
+/// assert_eq!(index, None);
 /// ```
 ///
-pub fn find_str(source: &str, pattern: &str) -> usize {
+pub fn find_str(source: &str, pattern: &str) -> Option<usize> {
 
     let size = pattern.len();
     let data = source.to_lowercase();
@@ -61,8 +81,8 @@ pub fn find_str(source: &str, pattern: &str) -> usize {
                     continue 'upper
                 }
             }
-            return x
+            return Some(x)
         }
     }
-    0
+    None
 }

@@ -3,6 +3,12 @@ use std::fmt::Write;
 
 /// Returns a [String] of Hexadecimal-encoded bytes of &[u8] provided
 ///
+/// Takes in:
+/// &[u8]
+///
+/// Outputs:
+/// [String]
+///
 /// # Example
 ///
 /// ```
@@ -31,6 +37,16 @@ pub fn bytes_to_hex_string(source: &[u8]) -> String {
 /// Returns the index of one Hex-encoded [String] pattern located inside of
 /// another Hex-encoded [String] source
 ///
+/// Returns 0 if the pattern was not found
+///
+/// Takes in:
+/// &[String], &[String]
+/// Where the &String is a String of Hex bytes
+///
+/// Outputs:
+/// [usize]
+///
+///
 /// # Example
 ///
 /// ```
@@ -45,7 +61,7 @@ pub fn bytes_to_hex_string(source: &[u8]) -> String {
 pub fn index_hex_string_in_hex_string(source: &String, pattern: &String) -> usize {
 
     if !source.contains(pattern) {
-        println!("The string to find was not in the data");
+        //println!("The string to find was not in the data");
         return 0
     }
 
