@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":[["find_str","Finds a [String] match within a source and a provided pattern and returns the [usize] index pointing to where that pattern is first found."],["find_str_exact","Finds an exact [String] match within a source and a provided pattern and returns the [usize] index pointing to where that pattern is first found."]]};

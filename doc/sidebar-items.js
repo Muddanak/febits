@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":[["prim_str",""],["prim_u32",""],["string_fe",""],["vectors",""]]};
